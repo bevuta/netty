@@ -587,7 +587,7 @@ abstract class AbstractEpollChannel extends AbstractChannel implements UnixChann
         @Override
         public void connect(
                 final SocketAddress remoteAddress, final SocketAddress localAddress, final ChannelPromise promise) {
-            if (!promise.setUncancellable() || !ensureOpen(promise)) {
+            if (!ensureOpen(promise)) {
                 return;
             }
 
